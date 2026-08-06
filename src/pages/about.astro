@@ -1,0 +1,255 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import { SITE_DATA } from '../constants';
+import portraitImage from '../assets/portrait.png';
+
+import '../styles/about.css';
+---
+
+<Layout pageTitle="About">
+    <div class="page-container">
+        <h1>About me</h1>
+
+        <div class="about-content">
+            <div class="about-intro-wrapper centered-column">
+                <div class="about-header centered-column">
+                    <Image src={portraitImage} alt={SITE_DATA.name} class="about-portrait" />
+                    <h2 class="about-name">{SITE_DATA.name}</h2>
+                </div>
+
+                <p class="intro-text">
+                    AI Engineer and Data Scientist with hands-on experience building intelligent,
+                    <strong>production-grade machine learning systems</strong> across anomaly detection, NLP, and
+                    renewable energy, as well as AI-powered agents and RAG applications. Skilled in LLM integration,
+                    backend development (FastAPI), MLOps, and deploying scalable solutions from experimentation to
+                    real-world impact — including an anomaly-detection system that helped secure investor funding.
+                    Also active in security research (bug bounty) and interested in
+                    <strong>post-quantum, differentially-resistant cryptography</strong>.
+                </p>
+            </div>
+
+            <section>
+                <h2>Research Statement</h2>
+                <div class="info-card">
+                    <p>
+                        "Good models don't just perform well in a notebook — they earn trust in production,
+                        under real data, real constraints, and real consequences."
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Areas of Focus</h2>
+                <ul class="custom-list">
+                    <li>
+                        <span class="list-item-title">Anomaly Detection &amp; Time-Series Modeling</span>
+                        <span class="list-item-description">Building production systems that detect abnormal
+                        behavior in network traffic, sensor data, and industrial equipment using isolation forests,
+                        autoencoders, LSTMs, and statistical modeling.</span>
+                    </li>
+                    <li>
+                        <span class="list-item-title">LLMs, RAG &amp; AI Agents</span>
+                        <span class="list-item-description">Designing and deploying retrieval-augmented generation
+                        pipelines and AI agent systems — from document chunking and embeddings to grounded,
+                        LLM-powered chat assistants served through FastAPI backends.</span>
+                    </li>
+                    <li>
+                        <span class="list-item-title">Privacy-Preserving &amp; Federated Learning</span>
+                        <span class="list-item-description">Researching federated graph learning for network
+                        intrusion detection, combining differential privacy (DP-SGD) and Byzantine-robust
+                        aggregation to train models across distributed clients without centralizing raw data.</span>
+                    </li>
+                    <li>
+                        <span class="list-item-title">Applied Security Research</span>
+                        <span class="list-item-description">Identifying and responsibly disclosing web application
+                        vulnerabilities through bug bounty programs, with an interest in post-quantum and
+                        differentially-resistant cryptography.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Experience</h2>
+                <ul class="work-list icon-list">
+                    <li>
+                        <div class="list-entry">
+                            <h3>AI-Based Anomaly &amp; Miner Detection System</h3>
+                            <p class="institution">Kermanshah Electricity Distribution Company</p>
+                            <p>Developed an end-to-end anomaly detection system for the utility, covering both
+                            residential unauthorized cryptocurrency-mining detection (isolation forests and
+                            autoencoders on network traffic data) and industrial electrical fault detection
+                            (LSTM networks and statistical modeling on time-series sensor data). Achieved 97%
+                            detection accuracy on live utility data; the system was adopted by the utility and
+                            directly contributed to attracting investor funding. Won 1st place at a national
+                            inter-university AI competition with this project.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-entry">
+                            <h3>Predictive Maintenance for Renewable Energy Systems</h3>
+                            <p class="institution">Independent / Applied Research</p>
+                            <p>Built a predictive analytics model using time-series forecasting and anomaly
+                            detection to anticipate failures in solar panel arrays. Integrated LSTM and
+                            Transformer-based architectures on sensor data from IoT devices, achieving a
+                            25% reduction in unplanned downtime and 15% improvement in energy efficiency.
+                            Deployed on AWS with real-time monitoring.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-entry">
+                            <h3>Privacy-Preserving Federated Graph Learning for Network Intrusion Detection</h3>
+                            <p class="institution">Independent Research — manuscript in preparation</p>
+                            <p>Designing a federated learning system that trains Graph Neural Networks across
+                            distributed clients on network traffic data to detect intrusions, without centralizing
+                            raw data. Implementing differential privacy (DP-SGD) and Byzantine-robust aggregation
+                            to defend against malicious or colluding participants, plus explainability components
+                            for auditability. Built a full experimental pipeline (~10K lines of Python/PyTorch)
+                            with dedicated validation and benchmarking suites.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-entry">
+                            <h3>RAG-Based Document Chat Assistant</h3>
+                            <p class="institution">Personal Project</p>
+                            <p>Built a NotebookLM-style chatbot that ingests PDF documents, retrieves relevant
+                            content via a RAG pipeline, and generates grounded answers using an LLM. Implemented
+                            the backend with FastAPI, including document chunking, embedding, and vector search.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-entry">
+                            <h3>Improving Growth Functions in Language Models</h3>
+                            <p class="institution">Independent Research</p>
+                            <p>Optimized growth functions in large language models to enhance training efficiency
+                            and performance scaling. Explored modifications to activation functions and parameter
+                            growth strategies (inspired by scaling laws) using PyTorch, resulting in faster
+                            convergence and improved model accuracy on NLP tasks.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-entry">
+                            <h3>Bug Bounty &amp; Web Application Security Research</h3>
+                            <p class="institution">HackerOne, Bugcrowd, Intigriti</p>
+                            <p>Participated in bug bounty programs, identifying and responsibly disclosing
+                            vulnerabilities (XSS, IDOR, authentication flaws) in live web applications using
+                            manual testing and tools like Burp Suite.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Education</h2>
+                <ul class="education-list icon-list">
+                    <li>
+                        <div class="education-entry">
+                            <h3>Bachelor of Computer Engineering</h3>
+                            <p class="institution">Islamic Azad University — In progress, 7th semester</p>
+                            <p class="grade">Final Thesis: "Fuzzy Logic-Based Climate Control in Smart Greenhouses"</p>
+                            <p class="grade">Coursework: Machine Learning, Deep Learning, Data Structures, Statistics</p>
+                            <p class="grade">Member of Data Science Research Group &amp; AI Lab; Research Director, Computer Science Scientific Association</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Distinctions &amp; Awards</h2>
+                <ul class="distinctions-list icon-list">
+                    <li>
+                        <span class="list-item-title">1st Place, National Inter-University AI Competition</span>
+                        <span class="list-item-description">Awarded for the AI-Based Anomaly &amp; Miner Detection
+                        System developed for Kermanshah Electricity Distribution Company, which achieved 97%
+                        detection accuracy on live utility data and was adopted into production.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Skills</h2>
+                <ul class="custom-list">
+                    <li>
+                        <span class="list-item-title">Languages &amp; Tools</span>
+                        <span class="list-item-description">Python, SQL, Bash, Git, Jupyter, Linux</span>
+                    </li>
+                    <li>
+                        <span class="list-item-title">LLM / GenAI</span>
+                        <span class="list-item-description">Large Language Models (LLM), Retrieval-Augmented
+                        Generation (RAG), LangChain, LlamaIndex, Hugging Face Transformers, OpenAI API,
+                        AI Agents, Vector Databases</span>
+                    </li>
+                    <li>
+                        <span class="list-item-title">Libraries &amp; Frameworks</span>
+                        <span class="list-item-description">NumPy, Pandas, Scikit-learn, TensorFlow, PyTorch,
+                        Keras, MLflow</span>
+                    </li>
+                    <li>
+                        <span class="list-item-title">AI &amp; ML Expertise</span>
+                        <span class="list-item-description">Supervised/Unsupervised Learning, Deep Learning,
+                        Neural Networks, SHAP, Evaluation Metrics, Statistical Analysis</span>
+                    </li>
+                    <li>
+                        <span class="list-item-title">Specialized Domains</span>
+                        <span class="list-item-description">Computer Vision, NLP, Time Series, Climate
+                        Forecasting, Healthcare AI</span>
+                    </li>
+                    <li>
+                        <span class="list-item-title">Deployment &amp; DevOps</span>
+                        <span class="list-item-description">FastAPI, Docker, Kubernetes, Terraform, Nginx,
+                        AWS, MLOps</span>
+                    </li>
+                    <li>
+                        <span class="list-item-title">Data &amp; Databases</span>
+                        <span class="list-item-description">SQL, SQLite, MySQL, PostgreSQL</span>
+                    </li>
+                    <li>
+                        <span class="list-item-title">Security</span>
+                        <span class="list-item-description">Cybersecurity, Bug Bounty Hunting (HackerOne,
+                        Bugcrowd, Intigriti), OWASP Top 10, Web Application Security Testing, Penetration
+                        Testing, Ethical Hacking &amp; Responsible Disclosure, Post-Quantum / Differential
+                        Cryptography (interest area)</span>
+                    </li>
+                    <li>
+                        <span class="list-item-title">Workflow &amp; Collaboration</span>
+                        <span class="list-item-description">Agile, Scrum, GitHub, Research Coordination,
+                        Technical Writing</span>
+                    </li>
+                    <li>
+                        <span class="list-item-title">Languages</span>
+                        <span class="list-item-description">English — Professional working proficiency;
+                        Persian — Native</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>CV</h2>
+                <div class="info-card">
+                    <p>
+                        For a full curriculum vitae, see my LinkedIn profile.
+                    </p>
+                    <a href={`https://linkedin.com/in/${SITE_DATA.linkedin}`}
+                       class="info-card-link"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Visit my LinkedIn profile">
+                        <svg viewBox="0 0 24 24" width="60" height="60" fill="currentColor">
+                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.4 1.08 3.4 3.93z"></path>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </section>
+
+            <section>
+                <h2>Contact</h2>
+                <p>
+                    Open to collaboration, research discussions, and interesting AI/ML projects. Reach out via
+                    <a href={`mailto:${SITE_DATA.email}`}>e-mail</a> or
+                    <a href={`https://linkedin.com/in/${SITE_DATA.linkedin}`} target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+                </p>
+            </section>
+        </div>
+    </div>
+</Layout>
